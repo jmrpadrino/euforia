@@ -1,0 +1,117 @@
+/*
+Theme Name: Euforia WordPress Theme
+Theme URI: https://choclomedia.com
+Author: The Choclomedia & Codemotion Team
+Author URI: https://choclomedia.com
+Description: This will also change.
+
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: euforia
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-menu, featured-images, footer-widgets, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+#wpadminbar{
+    background: #484848;
+    
+}
+#wpadminbar #wp-admin-bar-wp-logo:hover >.ab-item .ab-icon:before{
+    color: #FFF;
+}
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before{
+    color: #ac0931;
+}
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a, #wpadminbar .quicklinks .menupop ul li a:focus, #wpadminbar .quicklinks .menupop ul li a:focus strong, #wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:hover strong, #wpadminbar .quicklinks .menupop.hover ul li a:focus, #wpadminbar .quicklinks .menupop.hover ul li a:hover, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover, #wpadminbar li #adminbarsearch.adminbar-focused:before, #wpadminbar li .ab-item:focus .ab-icon:before, #wpadminbar li .ab-item:focus:before, #wpadminbar li a:focus .ab-icon:before, #wpadminbar li.hover .ab-icon:before, #wpadminbar li.hover .ab-item:before, #wpadminbar li:hover #adminbarsearch:before, #wpadminbar li:hover .ab-icon:before, #wpadminbar li:hover .ab-item:before, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover,#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus,#adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus{
+    color: black !important;
+}
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus{
+    background: #c5c5c5;
+    color: white;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, .no-js li.wp-has-current-submenu:hover .wp-submenu{
+    background: #ac0931;
+}
+#adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before{
+    color: #2d2d2d;
+}
+.postbox .inside h2, .wrap [class$=icon32]+h2, .wrap h1, .wrap>h2:first-child{
+    color: #ec0b43;
+}
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active{
+    border-radius: 0px;
+    border: 1px solid #ec0b43;
+    background: #ec0b43;
+    color: #fff;
+    -webkit-transition: all ease .2s;
+    transition: all ease .2s;
+}
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary{
+    border-radius: 0px;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.wp-core-ui .button-secondary:active, .wp-core-ui .button.active, .wp-core-ui .button.active:hover, .wp-core-ui .button:active{
+    border-color: #ac0931;
+    background: #ac0931;
+    color: #2d2d2d;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.wp-core-ui .button, .wp-core-ui .button-secondary{
+    background: #ec0b43;
+    color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all ease .2s;
+    transition: all ease .2s;
+}
+.wp-core-ui .button .wp-media-buttons-icon:before, .wp-core-ui .button-secondary .wp-media-buttons-icon:before{
+    color: #fff;
+}
+.wp-core-ui .button:hover .wp-media-buttons-icon:before, .wp-core-ui .button-secondary:hover .wp-media-buttons-icon:before{
+    color: #2d2d2d;
+}
+.wp-core-ui .button-secondary:focus, .wp-core-ui .button-secondary:hover, .wp-core-ui .button.focus, .wp-core-ui .button.hover, .wp-core-ui .button:focus, .wp-core-ui .button:hover,.wrap .add-new-h2:hover, .wrap .page-title-action:hover{
+    border-color: #ac0931 !important;
+    background: #ac0931;
+    color: #2d2d2d;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.wrap .page-title-action:focus{
+    border: 1px solid #ec0b43;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.wp-core-ui .button-primary{
+    text-shadow: none;
+}
+.wp-core-ui .button.button-primary.button-hero{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.wp-filter{
+    background: #2d2d2d;
+}
+.wp-filter .search-form input[type=search]{
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid;
+}
+#adminmenu div.wp-menu-image:before{
+    color: #484848;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu{
+    background: #ec0b43;
+}
+.metabox-holder .postbox>h3, .metabox-holder .stuffbox>h3, .metabox-holder h2.hndle, .metabox-holder h3.hndle,.bulk-action-notice .toggle-indicator:before, .js .meta-box-sortables .postbox .toggle-indicator:before, .js .sidebar-name .sidebar-name-arrow:before{
+    color: #ac0931;
+}
+.item-home,.separator-home,.item-custom-post-type-product, .item-custom-post-type-product + .separator, .item-custom-post-type-service, .item-custom-post-type-service + .separator{
+    display: none !important;
+}

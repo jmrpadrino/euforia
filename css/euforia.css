@@ -1,0 +1,216 @@
+/* SDANDARD */
+@font-face {
+    font-family: GothamBlack;
+    src: url(../fonts/Gotham-Black.otf);
+}
+@font-face {
+    font-family: GothamBold;
+    src: url(../fonts/Gotham-Bold.otf);
+}
+@font-face {
+    font-family: GothamBoldItalic;
+    src: url(../fonts/Gotham-BoldItalic.otf);
+}
+@font-face {
+    font-family: GothamBook;
+    src: url(../fonts/Gotham-Book.otf);
+}
+@font-face {
+    font-family: GothamMedium;
+    src: url(../fonts/Gotham-Medium.otf);
+}
+@font-face {
+    font-family: GothamThin;
+    src: url(../fonts/Gotham-Thin.otf);
+}
+body{
+    background: #010101;
+    color: white;
+    font-family: 'GothamMedium', sans-serif;
+    font-size: 18px;
+}
+.text-euforia{
+    color: #ec0b43;
+}
+hr{
+    border-color: #ec0b43;
+}
+body.page-template-default:not(.home),
+body.page-template:not(.home){
+    background-image: url(../images/euforia-pages-background.jpg);
+    background-position: top;
+    background-size: cover;
+}
+/* HEADER */
+.header-placeholder, .footer-placeholder{
+    background: #ec0b43;
+}
+.header-placeholder{
+    margin-bottom: 42px;
+}
+.footer-placeholder{
+    padding: 60px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+.euforia-brand-responsive{
+    font-size: 18px;
+    margin: 18px 0;
+}
+.euforia-brand-responsive, .euforia-brand-responsive small{
+    color: black;
+}
+.main-container{
+    min-height: 600px;
+}
+.header-menu{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'GothamBlack', sans-serif;
+}
+.menu-item{
+    margin: 50px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+@media screen and (max-height: 768px){
+    .menu-item{
+        margin: 25px 0;
+    }   
+}
+.menu-item:after{
+    content: '|';
+    display: inline-block;
+    margin-left: 24px;
+    margin-right: 8px;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    color: black;
+}
+.menu-item:last-child:after{
+    display: none;
+}
+.social-menu .menu-item:after{
+    display: none;
+}
+.menu-item a, .menu-item a:hover{
+    color: black;
+    text-decoration: none;
+}
+.current_page_item a{
+    color: white;
+}
+/* HERO HOME */
+.logo-placeholder{
+    position: relative;
+    display: block;
+    float: left;
+    margin-bottom: 36px;
+    min-height: 116px;
+}
+.ribon-new,
+.brand-name{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.brand-name {
+    margin-left: 36px; 
+}
+.home-product-container{
+    margin-bottom: 0px;
+    position: relative;
+}
+.product-bkg-placeholder{
+    z-index: 0;
+    width: 100%;
+}
+.flex-row-centered-elements{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.home-product-container .product-bkg{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+.home-product-container .product-home-image{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    z-index: 9;
+}
+.slogan-placeholder{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 9;
+}
+.slogan-placeholder img{
+    margin-top: auto;
+}
+.footer-copyright{
+    margin: 0px;
+}
+/* INNER PAGES */
+.product-aside{
+    position: relative;
+}
+.wolf-strike{
+    position: absolute;
+    z-index: 1;
+    bottom: 250px;
+    left: -20px;
+    opacity: .2;
+}
+.euforia-product-aside{
+    position: relative;
+    z-index: 9;
+    margin-bottom: 100px;
+}
+.product-aside{
+    position: relative;
+    margin-bottom: 120px;
+}
+/* PAGE ALTER TEMPLATE */
+.page-content-container{
+    
+}
+/* CONTACT PAGE */
+.euforia-form{
+    margin-top: 80px;
+}
+.euforia-form label{
+    font-size: 24px;
+    margin-top: 6px;
+}
+.euforia-form input, .euforia-form textarea{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+.euforia-form input[type="submit"]{
+    background: #EC0B43;
+    color: black;
+    text-transform: uppercase;
+    border: 0px;
+    font-weight: bold;
+}
+.euforia-form input[type="submit"]:hover{
+    color: white;
+}
