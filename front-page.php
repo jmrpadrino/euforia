@@ -3,9 +3,9 @@
                 <?= get_template_part('templates/logo-placeholder') ?>
                 <div class="row">
                     <div class="col-xs-12 home-product-container">
-                        <img width="300" class="product-home-image" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png">
+                        <img class="product-home-image" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png">
                         <div class="flex-row-centered-elements product-bkg-placeholder">
-                            <img widht="1000px" class="product-bkg" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-eyes.jpg">
+                            <img width="600px" class="product-bkg" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-eyes.jpg">
                         </div>
                         <?= get_template_part('templates/slogan-placeholder') ?>
                     </div>

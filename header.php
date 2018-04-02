@@ -40,6 +40,7 @@
                                         <?php if ( $youtube = get_post_meta( $contacto_ID, $prefix . 'youtube', true) ){ ?>
                                         <li class="menu-item"><a href="<?= $youtube ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
                                         <?php } ?>
+                                        <li id="responsive-nav-btn" class="menu-item"><a href="#"><i class="fas fa-bars"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -47,7 +48,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-xs-10">
-                                            <nav>
+                                            <nav id="main-nav">
                                                 <?php 
                                                     //wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right pull-right orangine-menu-items', 'depth'=> 4, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu));
                                                     wp_nav_menu( array(

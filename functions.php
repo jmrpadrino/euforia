@@ -53,6 +53,7 @@ function euforia_setup(){
         wp_localize_script( 'euforia', 'euforiaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));        
 
         wp_enqueue_script( 'euforia-scroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array ( 'jquery' ), '1.1', true);
+        wp_enqueue_script( 'euforia-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array ( 'jquery' ), '1.1', true);
         wp_enqueue_script( 'euforia-icons','https://use.fontawesome.com/releases/v5.0.9/js/all.js', array ( 'jquery' ), '1.1', true);
         wp_enqueue_script( 'euforia', get_template_directory_uri() . '/js/euforia.js', array ( 'jquery' ), '1.1', true);
 
