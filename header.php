@@ -1,3 +1,8 @@
+<?php 
+    $prefix = 'euforia_';
+    $contacto = get_page_by_path('contacto');
+    $contacto_ID = $contacto->ID;
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -26,9 +31,15 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <ul class="list-inline header-menu social-menu pull-right">
-                                        <li class="menu-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="menu-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li class="menu-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                        <?php if ( $facebook = get_post_meta( $contacto_ID, $prefix . 'facebook', true) ){ ?>
+                                        <li class="menu-item"><a href="<?= $facebook ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <?php } ?>
+                                        <?php if ( $instagram = get_post_meta( $contacto_ID, $prefix . 'instagram', true) ){ ?>
+                                        <li class="menu-item"><a href="<?= $instagram ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        <?php } ?>
+                                        <?php if ( $youtube = get_post_meta( $contacto_ID, $prefix . 'youtube', true) ){ ?>
+                                        <li class="menu-item"><a href="<?= $youtube ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                        <?php } ?>
                                     </ul>
                                 </div>
                             </div>
@@ -52,9 +63,15 @@
                                         </div>
                                         <div class="col-xs-2">
                                             <ul class="list-inline header-menu social-menu pull-right">
-                                                <li class="menu-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li class="menu-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li class="menu-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                                <?php if ( $facebook = get_post_meta( $contacto_ID, $prefix . 'facebook', true) ){ ?>
+                                                <li class="menu-item"><a href="<?= $facebook ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <?php } ?>
+                                                <?php if ( $instagram = get_post_meta( $contacto_ID, $prefix . 'instagram', true) ){ ?>
+                                                <li class="menu-item"><a href="<?= $instagram ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                                <?php } ?>
+                                                <?php if ( $youtube = get_post_meta( $contacto_ID, $prefix . 'youtube', true) ){ ?>
+                                                <li class="menu-item"><a href="<?= $youtube ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                                <?php } ?>
                                             </ul>
                                         </div>
                                     </div>

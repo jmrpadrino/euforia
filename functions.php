@@ -1,8 +1,7 @@
 <?php
 
 /* Auxiliar scripts */
-//require_once('inc/euforia_cpt.php');
-//require_once('inc/euforia_metaboxes.php');
+require_once('includes/euforia-custom-metaboxes.php');
 
 function euforia_setup(){
 
@@ -39,8 +38,8 @@ function euforia_setup(){
         wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '3.3.7', 'all' );
         wp_enqueue_style( 'bootstrap_theme', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', array(), '3.3.7', 'all' );
         wp_enqueue_style( 'euforia', get_template_directory_uri() . '/css/euforia.css', array(), '1.1', 'all');
-        wp_enqueue_style( 'euforia_fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,900', array(), '', 'all');
-        wp_enqueue_style( 'style', get_stylesheet_uri() );
+        wp_enqueue_style( 'euforia-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,900', array(), '', 'all');
+        wp_enqueue_style( 'euforia-style', get_stylesheet_uri() );
         /*
         wp_enqueue_style( 'owlslider', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), '2.2.0', null );
         wp_enqueue_style( 'owltheme', get_template_directory_uri() . '/css/owl.theme.min.css', array(), '2.2.0', null );

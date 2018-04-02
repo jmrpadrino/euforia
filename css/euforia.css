@@ -28,6 +28,7 @@ body{
     color: white;
     font-family: 'GothamMedium', sans-serif;
     font-size: 18px;
+    overflow-x: hidden;
 }
 .text-euforia{
     color: #ec0b43;
@@ -36,7 +37,9 @@ hr{
     border-color: #ec0b43;
 }
 body.page-template-default:not(.home),
-body.page-template:not(.home){
+body.page-template:not(.home),
+body.archive,
+body.blog {
     background-image: url(../images/euforia-pages-background.jpg);
     background-position: top;
     background-size: cover;
@@ -184,8 +187,32 @@ body.page-template:not(.home){
     margin-bottom: 120px;
 }
 /* PAGE ALTER TEMPLATE */
+.alter-template .euforia-product-aside{
+    margin-bottom: 0px;
+}
 .page-content-container{
-    
+    position: relative;
+    padding-bottom: 200px;
+}
+.page-content-container .wolf-strike{
+	bottom: 0px;
+    z-index: -1;
+    transform: translateX(250px);
+}
+.page-content-container .slogan-placeholder{
+    left: 0;
+    bottom: 0px;
+}
+.more-products-section{
+    background: #423F3F;
+    color: white;
+    font-family: 'GothamThin', sans-serif;
+    font-size: 24px;
+    padding: 120px 0;
+}
+.vita-link, .vita-link:hover{
+    color: white;
+    text-decoration: none;
 }
 /* CONTACT PAGE */
 .euforia-form{
@@ -213,4 +240,32 @@ body.page-template:not(.home){
 }
 .euforia-form input[type="submit"]:hover{
     color: white;
+}
+/* ARCHIE PAGE */
+.archive-list{
+    list-style: none;
+    text-align: left;
+    transform: translateY(-33px);
+}
+.archive-month-link, .archive-month-link:hover{
+    color: white;
+    text-decoration: none;
+}
+.loop-container{
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+.archive-article{
+    display: block;
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgba(93, 93, 93, 0.2);
+    overflow: auto;
+    padding-bottom: 36px;
+}
+.archve-post-title{
+    font-size: 32px;
+    padding-bottom: 18px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid rgba(236, 11, 67, 0.7);
+    
 }

@@ -7,5 +7,6 @@ $(document).ready( function(){
         cursorwidth: "10px", // cursor width in pixel (you can also write "5px")
         cursorborder: "1px solid rgba(20, 20, 20, 0.3)", // css definition for cursor border
         cursorborderradius: "10px", // border radius in pixel for cursor
+        horizrailenabled:false
     });
 })
