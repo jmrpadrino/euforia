@@ -308,6 +308,34 @@ body.blog {
     transform: translateX(-50%);
 }
 /* RESPONSIVE ISSUES */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .header-placeholder{
+        margin-bottom: 24px;
+    }
+    .header-menu{
+        list-style: none;
+    }
+    .menu-item{
+        margin: 24px 0;
+    }
+    .menu-item:after{
+        display: none;
+    }
+    .product-home-image{
+        max-height: calc(100vh - 280px);
+        width: auto;
+    }
+    .footer-placeholder{
+        padding: 20px;
+    }
+    .home-product-container .product-bkg{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .footer-placeholder{
+        font-size: 16px;
+    }
+}
 @media screen and (max-width: 768px){
     .header-placeholder{
         margin-bottom: 24px;
@@ -320,6 +348,13 @@ body.blog {
     }
     .menu-item:after{
         display: none;
+    }
+    .brand-name{
+        margin-left: 18px;
+        max-width: 80vw;
+    }
+    .ribon-new{
+        max-width: 80px;
     }
     .product-home-image{
         max-height: calc(100vh - 280px);
@@ -347,31 +382,37 @@ body.blog {
     }
     
 }
-@media screen and (min-width: 768px) and (max-width: 992px){
-    .header-placeholder{
-        margin-bottom: 24px;
+@media screen and (max-width: 480px){
+    .responsive-nav{
+        padding: 40px;
+        padding-top: 80px;
     }
-    .header-menu{
-        list-style: none;
+    .euforia-brand-responsive{
+        margin: 28px 0;
     }
-    .menu-item{
-        margin: 24px 0;
-    }
-    .menu-item:after{
+    .euforia-brand-responsive small{
         display: none;
     }
-    .product-home-image{
-        max-height: calc(100vh - 280px);
-        width: auto;
-    }
-    .footer-placeholder{
-        padding: 20px;
-    }
-    .home-product-container .product-bkg{
-        width: 90%;
-        margin: 0 auto;
-    }
-    .footer-placeholder{
+    .responsive-nav .menu-item a{
         font-size: 16px;
+    }
+    .responsive-nav .menu-item{
+        margin: 12px 0;
+    }
+    .responsive-nav-bottom .footer-copyright{
+        font-size: 14px;
+    }
+    .product-aside, .euforia-product-aside{
+        margin-bottom: 0px;
+    }
+    .slogan-placeholder{
+        width: 100%;
+    }
+    .wolf-strike{
+        display: none;
+    }
+    .loop-container{
+        margin: 0px;
+        padding-bottom: 0px;
     }
 }
