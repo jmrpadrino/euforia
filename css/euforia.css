@@ -35,7 +35,8 @@ body{
 }
 .sticky-wrapper{
     position: relative;
-    z-index: 9999999999999999;
+    min-height: 75vh;
+    position: relative;
 }
 hr{
     border-color: #ec0b43;
@@ -49,6 +50,12 @@ body.blog {
     background-size: cover;
 }
 /* HEADER */
+header{
+    position: fixed;
+    top: 0;
+    z-index: 9999999999;
+    width: 100%;
+}
 .header-placeholder, .footer-placeholder{
     background: #ec0b43;
 }
@@ -71,6 +78,7 @@ body.blog {
 }
 .main-container{
     min-height: 600px;
+    margin-top: 180px;
 }
 .header-menu{
     margin: 0px;
@@ -84,6 +92,9 @@ body.blog {
     font-size: 18px;
 }
 @media screen and (max-height: 768px){
+    .main-container{
+        margin-top: 90px;
+    }
     .menu-item{
         margin: 25px 0;
     }   
@@ -115,7 +126,7 @@ body.blog {
     position: relative;
     display: block;
     float: left;
-    min-height: 116px;
+    min-height: 80px;
     margin-top: 18px;
 }
 .ribon-new,
@@ -154,13 +165,14 @@ body.blog {
 .home-product-container .product-home-image{
     position: relative;
     margin: 0 auto;
+    margin-top: 60px;
     display: block;
     z-index: 9;
-    max-height: 65vh;
+    max-height: 70vh;
 }
 .slogan-placeholder{
     position: absolute;
-    bottom: 0px;
+    bottom: 40px;
     right: 0px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -177,17 +189,24 @@ body.blog {
 .product-aside{
     position: relative;
 }
+.product-aside .slogan-placeholder{
+    width: 100%;
+}
 .wolf-strike{
     position: absolute;
     z-index: 1;
-    bottom: 250px;
-    left: -20px;
+    bottom: 80px;
+    left: 0px;
     opacity: .2;
+    max-width: 60%;
 }
 .euforia-product-aside{
     position: relative;
     z-index: 9;
+    margin: 0 auto;
     margin-bottom: 100px;
+    height: 60vh;
+    display: block;
 }
 .product-aside{
     position: relative;
@@ -209,7 +228,8 @@ body.blog {
 }
 .page-content-container .slogan-placeholder{
     left: 0;
-    bottom: 0px;
+    bottom: -60px;
+    right: auto;
 }
 .more-products-section{
     background: #423F3F;
@@ -307,6 +327,9 @@ body.blog {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+.stickThis{
+    width: 100%;
+}
 /* RESPONSIVE ISSUES */
 @media screen and (min-width: 768px) and (max-width: 992px){
     .header-placeholder{
@@ -383,6 +406,10 @@ body.blog {
     
 }
 @media screen and (max-width: 480px){
+    .main-container{
+        margin-top: 70px;
+        min-height: auto;
+    }
     .responsive-nav{
         padding: 40px;
         padding-top: 80px;
@@ -399,6 +426,10 @@ body.blog {
     .responsive-nav .menu-item{
         margin: 12px 0;
     }
+    .home-product-container .product-home-image{
+        margin-top: 0px;
+        margin-bottom: 36px;
+    }
     .responsive-nav-bottom .footer-copyright{
         font-size: 14px;
     }
@@ -407,6 +438,7 @@ body.blog {
     }
     .slogan-placeholder{
         width: 100%;
+        bottom: -40px;
     }
     .wolf-strike{
         display: none;
@@ -414,5 +446,16 @@ body.blog {
     .loop-container{
         margin: 0px;
         padding-bottom: 0px;
+    }
+    .page-content-container .slogan-placeholder{
+        bottom: 36px;
+    }
+    .more-products-section{
+        padding: 36px 0;
+    }
+    .more-products-section img{
+        display: block;
+        margin: 0 auto;
+        margin-top: 36px;
     }
 }
