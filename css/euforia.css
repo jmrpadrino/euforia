@@ -49,6 +49,12 @@ body.blog {
     background-size: cover;
 }
 /* HEADER */
+header{
+    position: fixed;
+    top: 0;
+    z-index: 9999999999;
+    width: 100%;
+}
 .header-placeholder, .footer-placeholder{
     background: #ec0b43;
 }
@@ -71,6 +77,7 @@ body.blog {
 }
 .main-container{
     min-height: 600px;
+    margin-top: 140px;
 }
 .header-menu{
     margin: 0px;
@@ -166,6 +173,7 @@ body.blog {
     display: -ms-flexbox;
     display: flex;
     z-index: 9;
+    width: 100%;
 }
 .slogan-placeholder img{
     margin-top: auto;
@@ -183,11 +191,15 @@ body.blog {
     bottom: 250px;
     left: -20px;
     opacity: .2;
+    max-width: 80%;
 }
 .euforia-product-aside{
     position: relative;
     z-index: 9;
+    margin: 0 auto;
     margin-bottom: 100px;
+    height: 60vh;
+    display: block;
 }
 .product-aside{
     position: relative;
@@ -307,7 +319,38 @@ body.blog {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+.stickThis{
+    width: 100%;
+}
 /* RESPONSIVE ISSUES */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .header-placeholder{
+        margin-bottom: 24px;
+    }
+    .header-menu{
+        list-style: none;
+    }
+    .menu-item{
+        margin: 24px 0;
+    }
+    .menu-item:after{
+        display: none;
+    }
+    .product-home-image{
+        max-height: calc(100vh - 280px);
+        width: auto;
+    }
+    .footer-placeholder{
+        padding: 20px;
+    }
+    .home-product-container .product-bkg{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .footer-placeholder{
+        font-size: 16px;
+    }
+}
 @media screen and (max-width: 768px){
     .header-placeholder{
         margin-bottom: 24px;
@@ -320,6 +363,13 @@ body.blog {
     }
     .menu-item:after{
         display: none;
+    }
+    .brand-name{
+        margin-left: 18px;
+        max-width: 80vw;
+    }
+    .ribon-new{
+        max-width: 80px;
     }
     .product-home-image{
         max-height: calc(100vh - 280px);
@@ -347,31 +397,37 @@ body.blog {
     }
     
 }
-@media screen and (min-width: 768px) and (max-width: 992px){
-    .header-placeholder{
-        margin-bottom: 24px;
+@media screen and (max-width: 480px){
+    .responsive-nav{
+        padding: 40px;
+        padding-top: 80px;
     }
-    .header-menu{
-        list-style: none;
+    .euforia-brand-responsive{
+        margin: 28px 0;
     }
-    .menu-item{
-        margin: 24px 0;
-    }
-    .menu-item:after{
+    .euforia-brand-responsive small{
         display: none;
     }
-    .product-home-image{
-        max-height: calc(100vh - 280px);
-        width: auto;
-    }
-    .footer-placeholder{
-        padding: 20px;
-    }
-    .home-product-container .product-bkg{
-        width: 90%;
-        margin: 0 auto;
-    }
-    .footer-placeholder{
+    .responsive-nav .menu-item a{
         font-size: 16px;
+    }
+    .responsive-nav .menu-item{
+        margin: 12px 0;
+    }
+    .responsive-nav-bottom .footer-copyright{
+        font-size: 14px;
+    }
+    .product-aside, .euforia-product-aside{
+        margin-bottom: 0px;
+    }
+    .slogan-placeholder{
+        width: 100%;
+    }
+    .wolf-strike{
+        display: none;
+    }
+    .loop-container{
+        margin: 0px;
+        padding-bottom: 0px;
     }
 }

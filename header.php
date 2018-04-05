@@ -26,10 +26,10 @@
                     <div class="col-xs-12">
                         <div class="container">
                             <div class="row hidden-md hidden-lg">
-                                <div class="col-xs-6">
-                                    <h1 class="euforia-brand-responsive"><?= bloginfo('name') ?><br /><small><?= bloginfo('description') ?></small></h1>
+                                <div class="col-xs-5">
+                                    <a href="<?= home_url() ?>"><h1 class="euforia-brand-responsive"><?= bloginfo('name') ?><br /><small><?= bloginfo('description') ?></small></h1></a>
                                 </div>
-                                <div class="col-xs-6">
+                                <div class="col-xs-7">
                                     <ul class="list-inline header-menu social-menu pull-right">
                                         <?php if ( $facebook = get_post_meta( $contacto_ID, $prefix . 'facebook', true) ){ ?>
                                         <li class="menu-item"><a href="<?= $facebook ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>

@@ -8,7 +8,9 @@ Template Name: Euforia Side Product ALT
                 <?= get_template_part('templates/logo-placeholder') ?>
                 <div class="row">
                     <div class="col-sm-4">
-                        <img class="euforia-product-aside" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png" alt="Euforia - Despierta La Bestia">
+                        <div class="stickThis">     
+                            <img class="euforia-product-aside" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png" alt="Euforia - Despierta La Bestia">
+                        </div>
                     </div>
                     <div class="col-sm-8 col-md-6 product-aside">
                         <div class="page-content-container">
