@@ -1,18 +1,28 @@
+var more_product_section = $('.more-products-section');
+var tillBottom = 120;
 $(document).ready( function(){
+    
+    var window_width = $(window).width();
     
     console.log('App started');
     
-    var more_product_section = $('.more-products-section');
-    
-    $(".stickThis").sticky(
-        {
-            topSpacing:180,
-            bottomSpacing: 120 + more_product_section.height()
+    if (window_width >= 768){
+        
+        if (more_product_section.length > 0){
+            tillBottom += more_product_section.height() + 270;
         }
-    );
+
+        /*$(".stickThis").sticky(
+            {
+                topSpacing:180,
+                bottomSpacing: tillBottom
+            }
+        );*/
+        
+    }
     
     var productAside = $('.product-aside').width();
-    console.log(productAside);
+    
     $('.product-aside').css({'width': productAside+'!important'});
     
     var niceScrollArgs = {
@@ -27,12 +37,13 @@ $(document).ready( function(){
     
     $('body').niceScroll(niceScrollArgs);
     
-    var window_width = $(window).width();
     
-    if (window_width <= 768){
+    if (window_width <= 1024){
+        
+        console.log('hola');
         
         // Agregar el div sostenedor de la navegacion responsive
-        $('body').append('<div id="responsive-nav" class="responsive-nav"></div>');
+        $('header').append('<div id="responsive-nav" class="responsive-nav"></div>');
         
         // Mudar la navegacion desktop al responsive-nav
         $('#main-nav').appendTo('#responsive-nav');

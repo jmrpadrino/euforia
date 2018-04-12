@@ -16,11 +16,6 @@
                     text-align: right;
                     padding-left: 50px;
                 }
-                @media screen and (min-width: 1500px){
-                    .benefits-placeholder{
-                        bottom: 40px;
-                    }
-                }
                 .benefits-placeholder:before{
                     content: '';
                     display: inline-block;
@@ -163,7 +158,7 @@
                     <div class="col-md-10 col-md-offset-1 home-product-container">
                         <img class="product-home-image" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo-home.png">
                         <div class="flex-row-centered-elements product-bkg-placeholder">
-                            <img class="product-bkg" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-eyes.jpg">
+                            <img width="1200px" class="product-bkg" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-eyes.jpg">
                         </div>
                         <?= get_template_part('templates/slogan-placeholder') ?>
                     </div>
