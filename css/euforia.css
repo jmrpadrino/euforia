@@ -19,7 +19,6 @@
     font-family: GothamMedium;
     src: url('../fonts/Gotham-Medium.woff2') format('woff2'),
         url('../fonts/Gotham-Medium.woff') format('woff');
-    
     font-style: normal;
 }
 @font-face {
@@ -31,7 +30,7 @@ body{
     color: white;
     font-family: 'GothamMedium', sans-serif;
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: hidden;    
 }
 @media screen and (min-width: 1024px) and (max-width: 1500px){
     body{
@@ -79,6 +78,24 @@ body.single{
     background-image: url(../images/euforia-pages-background.jpg);
     background-position: top;
     background-size: cover;
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    body.page-template-default:not(.home),
+    body.page-template:not(.home),
+    body.archive,
+    body.blog,
+    body.single{
+        background-image: url(../images/FONDO-GARRA-1300.jpg);
+    }
+}
+@media screen and (min-width: 1500px){
+    body.page-template-default:not(.home),
+    body.page-template:not(.home),
+    body.archive,
+    body.blog,
+    body.single{
+        background-image: url(../images/FONDO-GARRA-big.jpg);
+    }
 }
 
 /* HEADER */

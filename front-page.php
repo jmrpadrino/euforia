@@ -3,7 +3,7 @@
                 .benefits-placeholder{
                     position: absolute;
                     z-index: 999;
-                    bottom: 250px;
+                    bottom: 20px;
                     left: calc(50% - 420px);
                     font-size: 16px;
                     line-height: 18px;
@@ -18,7 +18,7 @@
                 }
                 @media screen and (min-width: 1500px){
                     .benefits-placeholder{
-                        bottom: 40px;
+                        bottom: 100px;
                     }
                 }
                 .benefits-placeholder:before{

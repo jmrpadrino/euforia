@@ -70,7 +70,9 @@
                     </div>
                 </div>
             </div>
+            <!--
             <img class="wolf-strike" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-strike.png" alt="Euforia - Despierta La Bestia">
+            -->
         </div>
     </div>
 </div>

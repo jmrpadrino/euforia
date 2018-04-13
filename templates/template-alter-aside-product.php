@@ -10,7 +10,9 @@ Template Name: Euforia Side Product ALT
                     <div class="col-sm-8 col-sm-push-4 col-md-7 col-md-push-3 product-aside">
                         <div class="page-content-container">
                             <?php the_content(); ?>
+                            <!--
                             <img class="wolf-strike" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-strike.png" alt="Euforia - Despierta La Bestia">
+                            -->
                             <?= get_template_part('templates/slogan-placeholder') ?>
                         </div>                        
                     </div>

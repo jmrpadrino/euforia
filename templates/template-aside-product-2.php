@@ -34,7 +34,9 @@ Template Name: Euforia Side Product Slogan Content
                     </div>
                     <div class="col-sm-5 col-md-3 product-aside">  
                         <div class="stickThis">                      
+                            <!--
                             <img class="wolf-strike" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-strike.png" alt="Euforia - Despierta La Bestia">
+                            -->
                             <img class="euforia-product-aside" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png" alt="Euforia - Despierta La Bestia">
                         </div>
                     </div>

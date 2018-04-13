@@ -12,7 +12,9 @@ Template Name: Euforia Side Product
                     </div>
                     <div class="col-sm-5 col-md-3 product-aside">  
                         <div class="stickThis">                      
+                            <!--
                             <img class="wolf-strike" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-strike.png" alt="Euforia - Despierta La Bestia">
+                            -->
                             <img class="euforia-product-aside" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png" alt="Euforia - Despierta La Bestia">
                             <?= get_template_part('templates/slogan-placeholder') ?>
                         </div>

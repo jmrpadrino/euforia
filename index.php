@@ -92,7 +92,9 @@
                 <span class="sr-only">Next</span>
             </a>
             <div class="wolf-slogan-box">
+                <!--
                 <img class="wolf-strike" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-strike.png" alt="Euforia - Despierta La Bestia">
+                -->
                 <?= get_template_part('templates/slogan-placeholder') ?>
             </div>
         </div>
