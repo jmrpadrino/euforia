@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); global $wp;?>
 <style>
     .archive-carousel{
         position: relative;
@@ -7,7 +7,7 @@
     .wolf-slogan-box{
         position: absolute;
         right: 0;
-        bottom: 100px;
+        bottom: 50px;
     }
     .wolf-slogan-box .wolf-strike{
         bottom: 0px;
@@ -21,7 +21,10 @@
         font-size: 14px;
         top: 260px!important;
         height: 30px!important;
-        z-index: 999999999999999;
+        z-index: 9999999;
+    }
+    .carousel-inner .item{
+        margin-bottom: 80px;
     }
     .carousel-control span{
         border-radius: 100%;
@@ -56,11 +59,23 @@
         text-transform: uppercase;
         margin-left: 10%;
     }
+    .archive-month-link{
+        opacity: .2;
+        transition: opacity ease-in .1s;
+    }
+    .archive-month-link:hover{
+        opacity: 1;
+        transition: opacity ease-in .1s;
+    }
+    .archive-month-link.active-link{
+        opacity: 1;
+    }
 </style>
 <div class="container">
     <?= get_template_part('templates/logo-placeholder') ?>
     <div class="row">
         <div class="col-md-6 col-md-push-3 archive-carousel">
+            <?php if ( have_posts() ) { ?>
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">                
                 <div class="carousel-inner" role="listbox">
                     <?php
@@ -97,39 +112,27 @@
                 -->
                 <?= get_template_part('templates/slogan-placeholder') ?>
             </div>
+            <?php }else{ ?>
+            <h3 class="archive-carousel-post-title">No hay post en este mes.</h3>
+            <?php } ?>
         </div>
         <div class="col-md-2 col-md-offset-3 col-md-pull-8">
             <h2 class="gthin">Archivo /</h2>
+            <h3>2018</h3>
+            <ul class="archive-list pull-right">
             <?php
-                $year_prev = null;
-                $months = $wpdb->get_results(	"SELECT DISTINCT MONTH( post_date ) AS month ,
-                                                                    YEAR( post_date ) AS year,
-                                                                    COUNT( id ) as post_count FROM $wpdb->posts
-                                                                    WHERE post_status = 'publish'
-                                                                    and post_type = 'post'
-                                                                    GROUP BY month , year
-                                                                    ORDER BY post_date ASC");
-
-                foreach($months as $month) :
-                $year_current = $month->year;
-                if ($year_current != $year_prev){
-                    if ($year_prev != null){
+                $year = 2018;
+                for ( $i = 1; $i <= 12; $i++ ){
+                    $mes = $wp->query_vars['monthnum'];
             ?>
-            </ul>
-        <?php } ?>
-        <h3><?php echo $month->year; ?></h3>
-        <ul class="archive-list pull-right">
+                <li>
+                    <a class="archive-month-link <?= $i == str_replace('0','', $mes) ? 'active-link' : '' ?>" href="<?= get_month_link($year, $i); ?>">
+                        <span class="archive-month"><?php echo _e(ucfirst(date("F", mktime(0, 0, 0, $i, 1, $year)))) ?></span>
+                    </a>
+                </li>
             <?php } ?>
-            <li>
-                <a class="archive-month-link" href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
-                    <span class="archive-month"><?php echo _e(ucfirst(date("F", mktime(0, 0, 0, $month->month, 1, $month->year)))) ?></span>
-                    <!--span class="archive-count"><?php echo $month->post_count; ?></span-->
-                </a>
-            </li>
-            <?php $year_prev = $year_current;
-            endforeach; ?>
-        </ul>
+            </ul>
+        </div>
     </div>
-</div>
 </div>
 <?php get_footer(); ?>

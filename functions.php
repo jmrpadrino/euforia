@@ -1,6 +1,7 @@
 <?php
 
 /* Auxiliar scripts */
+require_once('includes/euforia-custom-post-type.php');
 require_once('includes/euforia-custom-metaboxes.php');
 
 function euforia_setup(){
@@ -18,6 +19,7 @@ function euforia_setup(){
     ) );
 
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
 
     /* Enqueuing Styles and Sripts */
 
@@ -149,6 +151,15 @@ function euforia_setup(){
 
 }
 add_action( 'after_setup_theme', 'euforia_setup' );
+
+/* ORDENAR MULTIMEDIA POR FECHA ASCENDENTE 
+function ordenarMultimedia(){
+    if ( is_archive() ){
+        $query->set( 'order', 'ASC' );
+    }
+}
+add_action( 'pre_get_posts', 'ordenarMultimedia');*/
+
 
 
 /* Pagination Support */
@@ -296,7 +307,7 @@ function send_mail_via_ajax(){
         //$mail->AddAddress($to);
         $mail->AddAddress('jrodriguez@webcreek.com', 'First Contact');
         $mail->AddAddress('ppazmino@webcreek.com', 'Second Contact');
-        $mail->FromName = 'euforia Wellhead Systems - Contact';
+        $mail->FromName = 'Euforia - Contact';
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->IsHTML();

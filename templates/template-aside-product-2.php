@@ -7,6 +7,7 @@ Template Name: Euforia Side Product Slogan Content
             <style>
                 .slogan-content-placeholder{
                     padding-left: 40px;
+					margin-bottom: 50px;
                 }
                 .slogan-content-placeholder .slogan-placeholder{
                     bottom: 0;

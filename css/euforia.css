@@ -168,7 +168,7 @@ header{
     color: black;
     text-decoration: none;
 }
-.current_page_item a{
+.current_page_item a, .current-menu-item a{
     color: white;
 }
 /* HERO HOME */
@@ -249,14 +249,16 @@ header{
 @media screen and (min-width: 1024px) and (max-width: 1500px){
     .slogan-placeholder{
         bottom: 18px;
-        right: 36px;
+        right: 90px;
     }
+    /*
     .slogan-placeholder .product-slogan{
         width: 220px;
     }
     .slogan-placeholder .slogan-badge{
         width: 50px;
     }
+    */
 }
 .footer-copyright{
     margin: 0px;
@@ -343,10 +345,9 @@ header{
     right: auto;
 }
 .alter-template .slogan-placeholder{
-    right: 0;
     width: auto;
-    left: auto;
-    bottom: 0;
+    left: 0;
+    bottom: 80px;
 }
 .more-products-section{
     background: #423F3F;

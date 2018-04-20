@@ -30,7 +30,7 @@ Template Name: Euforia Side Product ALT
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="row">
                                     <div class="col-md-4 col-md-offset-1">
-                                        <h3>CONÓCE MÁS DE<br />NUESTROS PRODUCTOS:</h3>
+                                        <h3>CONOCE MÁS DE<br />NUESTROS PRODUCTOS</h3>
                                         <hr />
                                         <img class="vita-health-logo" src="<?= get_template_directory_uri() ?>/images/vita-health-logo.png" alt="VitaHealth">
                                         <br/>

@@ -4,6 +4,28 @@ Template Name: Euforia Side Product
 */
 ?>
 <?php get_header(); the_post(); ?>
+<style>
+    @media screen and (max-width: 1500px) and (min-width: 1024px){
+        .slogan-placeholder{
+            right: 0;
+        }
+        .product-slogan{
+            width: 90%;
+        }
+        .slogan-badge{
+            width: 70px;
+            margin-left: -20px;
+        }
+        .euforia-form{
+            margin-top: 40px;
+        }
+        .euforia-form input, .euforia-form textarea{
+            padding: 7px;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+    }
+</style>
             <div class="container">
                 <?= get_template_part('templates/logo-placeholder') ?>
                 <div class="row">

@@ -151,6 +151,21 @@
                     -ms-animation: blink normal 1s infinite ease-in-out; /* IE */
                     animation: blink normal 1s infinite ease-in-out; /* Opera and prob css3 final iteration */
                 }
+                .slogan-placeholder{
+                    
+                }
+                @media screen and (max-width: 1500px) and (min-width: 1024px){
+                    .slogan-placeholder{
+                        right: 0;
+                    }   
+                    .product-slogan{
+                        max-width: 300px;
+                    }
+                    .slogan-badge{
+                        max-width: 70px;
+                        margin-left: -20px;
+                    }
+                }
             </style>
             <div class="benefits-placeholder hidden-xs">
                <div class="benefit-1">Mejora el rendimiento</div>
