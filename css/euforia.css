@@ -17,7 +17,9 @@
 }
 @font-face {
     font-family: GothamMedium;
-    src: url(../fonts/Gotham-Medium.otf);
+    src: url('../fonts/Gotham-Medium.woff2') format('woff2'),
+        url('../fonts/Gotham-Medium.woff') format('woff');
+    font-style: normal;
 }
 @font-face {
     font-family: GothamThin;
@@ -27,11 +29,32 @@ body{
     background: #010101;
     color: white;
     font-family: 'GothamMedium', sans-serif;
-    font-size: 18px;
-    overflow-x: hidden;
+    font-size: 16px;
+    overflow-x: hidden;    
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    body{
+        font-size: 14px;    
+    }
+}
+.gthin{
+    font-family: 'GothamThin', sans-serif;
+}
+.gBold{
+    font-family: 'GothamBold', sans-serif;
+}
+.gBlack{
+    font-family: 'GothamBlack', sans-serif;
+}
+.gMedium{
+    font-family: 'GothamMedium', sans-serif;
 }
 .text-euforia{
     color: #ec0b43;
+    display: inline-block;
+}
+.text-euforia.down-eight{
+    padding-top: 8px;
 }
 .sticky-wrapper{
     position: relative;
@@ -41,20 +64,49 @@ body{
 hr{
     border-color: #ec0b43;
 }
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    hr{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
 body.page-template-default:not(.home),
 body.page-template:not(.home),
 body.archive,
-body.blog {
+body.blog,
+body.single{
     background-image: url(../images/euforia-pages-background.jpg);
     background-position: top;
     background-size: cover;
 }
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    body.page-template-default:not(.home),
+    body.page-template:not(.home),
+    body.archive,
+    body.blog,
+    body.single{
+        background-image: url(../images/FONDO-GARRA-1300.jpg);
+    }
+}
+@media screen and (min-width: 1500px){
+    body.page-template-default:not(.home),
+    body.page-template:not(.home),
+    body.archive,
+    body.blog,
+    body.single{
+        background-image: url(../images/FONDO-GARRA-big.jpg);
+    }
+}
+
 /* HEADER */
 header{
     position: fixed;
     top: 0;
     z-index: 9999999999;
     width: 100%;
+}
+.no-margin{
+    margin: 0px!important;
 }
 .header-placeholder, .footer-placeholder{
     background: #ec0b43;
@@ -65,7 +117,7 @@ header{
 .footer-placeholder{
     padding: 30px;
     color: black;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     max-height: 130px;
 }
@@ -77,39 +129,37 @@ header{
     color: black;
 }
 .main-container{
-    min-height: 600px;
-    margin-top: 180px;
+    margin-top: 80px;
+    position: relative;
 }
 .header-menu{
     margin: 0px;
     padding: 0px;
-    font-family: 'GothamBlack', sans-serif;
+    font-family: 'GothamBold', sans-serif;
 }
 .menu-item{
-    margin: 50px 0;
+    margin: 26px 0;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 18px;
-}
-@media screen and (max-height: 768px){
-    .main-container{
-        margin-top: 90px;
-    }
-    .menu-item{
-        margin: 25px 0;
-    }   
+    font-size: 16px;
 }
 .menu-item:after{
-    content: '|';
-    display: inline-block;
-    margin-left: 24px;
-    margin-right: 8px;
+    content: '';
+    margin-left: 12px;
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
-    color: black;
+    border-left: 1px solid #010101;
 }
 .menu-item:last-child:after{
     display: none;
+}
+.navigation-items{
+    position: relative;
+}
+.social-menu{
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .social-menu .menu-item:after{
     display: none;
@@ -118,7 +168,7 @@ header{
     color: black;
     text-decoration: none;
 }
-.current_page_item a{
+.current_page_item a, .current-menu-item a{
     color: white;
 }
 /* HERO HOME */
@@ -126,14 +176,17 @@ header{
     position: relative;
     display: block;
     float: left;
-    min-height: 80px;
-    margin-top: 18px;
+    min-height: 130px;
+    z-index: 999;
 }
 .ribon-new,
 .brand-name{
     position: absolute;
     top: 0;
     left: 0;
+}
+.ribon-new{
+    margin-top: 20px;
 }
 .brand-name {
     margin-left: 36px; 
@@ -160,19 +213,30 @@ header{
 }
 .home-product-container .product-bkg{
     position: absolute;
-    top: 50px;
+    top: -40px;
+    width: 600px;
 }
+@media screen and (min-width: 1500px){
+    .home-product-container .product-bkg{
+        width: 1200px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .home-product-container .product-bkg{
+        width: 100%;
+    }
+}
+
 .home-product-container .product-home-image{
     position: relative;
     margin: 0 auto;
-    margin-top: 60px;
     display: block;
     z-index: 9;
-    max-height: 70vh;
+    height: calc(100vh - 300px);
 }
 .slogan-placeholder{
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     right: 0px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -182,6 +246,20 @@ header{
 .slogan-placeholder img{
     margin-top: auto;
 }
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    .slogan-placeholder{
+        bottom: 18px;
+        right: 90px;
+    }
+    /*
+    .slogan-placeholder .product-slogan{
+        width: 220px;
+    }
+    .slogan-placeholder .slogan-badge{
+        width: 50px;
+    }
+    */
+}
 .footer-copyright{
     margin: 0px;
 }
@@ -189,32 +267,59 @@ header{
 .product-aside{
     position: relative;
 }
+.page h2{
+    font-family: 'GothamThin', sans-serif;
+    font-size: 26px;
+    margin: 0px;
+    margin-bottom: 36px;
+    line-height: 1.2;
+}
+.page h2 img{
+    margin-bottom: 8px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    .page h2{
+        margin-bottom: 18px;
+    }
+}
+.page h2 strong{
+    font-family: 'GothamBlack', sans-serif;
+}
 .product-aside .slogan-placeholder{
     width: 100%;
 }
 .wolf-strike{
     position: absolute;
     z-index: 1;
-    bottom: 80px;
-    left: 0px;
+    bottom: 160px;
+    left: -30px;
     opacity: .2;
-    max-width: 60%;
 }
 .euforia-product-aside{
     position: relative;
     z-index: 9;
     margin: 0 auto;
     margin-bottom: 100px;
-    height: 60vh;
+    /*height: auto;*/
+    height: 82vh;
     display: block;
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px){
+    .euforia-product-aside{
+        height: 72vh;
+    }
 }
 .product-aside{
     position: relative;
-    margin-bottom: 120px;
+    *margin-bottom: 120px;
 }
 /* PAGE ALTER TEMPLATE */
 .alter-template .euforia-product-aside{
     margin-bottom: 0px;
+    margin-top: 0px;
+}
+.alter-template .page-content-container{
+    margin-top: 30px;
 }
 .page-content-container{
     position: relative;
@@ -226,10 +331,23 @@ header{
     -webkit-transform: translateX(250px);
     transform: translateX(250px);
 }
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .product-aside .page-content-container .wolf-strike{
+        bottom: 0px;
+        z-index: -1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
 .page-content-container .slogan-placeholder{
     left: 0;
     bottom: -60px;
     right: auto;
+}
+.alter-template .slogan-placeholder{
+    width: auto;
+    left: 0;
+    bottom: 80px;
 }
 .more-products-section{
     background: #423F3F;
@@ -249,6 +367,7 @@ header{
 .euforia-form label{
     font-size: 24px;
     margin-top: 6px;
+    font-family: 'GothamThin', sans-serif;
 }
 .euforia-form input, .euforia-form textarea{
     width: 100%;
@@ -288,13 +407,17 @@ header{
     display: block;
     margin-bottom: 48px;
     border-bottom: 1px solid rgba(93, 93, 93, 0.2);
-    overflow: auto;
     padding-bottom: 36px;
+}
+.archive-post-link, .archive-post-link:hover{
+    color: white;
+    text-decoration: none;
 }
 .archve-post-title{
     font-size: 32px;
     padding-bottom: 18px;
-    margin-bottom: 36px;
+    margin: 0;
+    margin-bottom: 18px;
     border-bottom: 1px solid rgba(236, 11, 67, 0.7);
     
 }
@@ -312,6 +435,7 @@ header{
 }
 .responsive-nav.in{
     left: 0;
+    z-index: -1;
 }
 .responsive-nav .menu-item a{
     font-size: 28px;
@@ -330,6 +454,26 @@ header{
 .stickThis{
     width: 100%;
 }
+/* SINGLE VIEW */
+.single-title{
+    margin: 0px;
+    font-family: 'GothamBlack', sans-serif;
+    font-size: 60px;
+}
+.single-thumbnail{
+    margin-bottom: 36px;
+}
+.single-content-placeholder{
+    color: #EC0B43;
+}
+.single-content-placeholder h1,
+.single-content-placeholder h2,
+.single-content-placeholder h3,
+.single-content-placeholder h4,
+.single-content-placeholder h5,
+.single-content-placeholder h6{
+    color: white;
+}
 /* RESPONSIVE ISSUES */
 @media screen and (min-width: 768px) and (max-width: 992px){
     .header-placeholder{
@@ -344,16 +488,30 @@ header{
     .menu-item:after{
         display: none;
     }
+    .ribon-new{
+        margin-top: 42px;
+    }
     .product-home-image{
         max-height: calc(100vh - 280px);
         width: auto;
     }
+    .euforia-product-aside{
+        width: 100%;
+    }
+    .wolf-strike{
+        left: auto;
+        right: 10px;
+    }
     .footer-placeholder{
         padding: 20px;
     }
+    .flex-row-centered-elements{
+        display: block;;
+    }
     .home-product-container .product-bkg{
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
+        margin-left: -16px;
     }
     .footer-placeholder{
         font-size: 16px;
@@ -375,6 +533,10 @@ header{
     .brand-name{
         margin-left: 18px;
         max-width: 80vw;
+        margin-top: 20px;
+    }
+    .home-product-container .product-bkg{
+        width: 100%;
     }
     .ribon-new{
         max-width: 80px;
@@ -386,16 +548,12 @@ header{
     .footer-placeholder{
         padding: 20px;
     }
-    .home-product-container .product-bkg{
-        width: 90%;
-        margin: 0 auto;
-    }
     .footer-placeholder{
         font-size: 16px;
     }
     .slogan-placeholder{
-        bottom: 15px;
-        width: 60%;
+        bottom: 100px;
+        width: 40%;
     }
     .product-slogan{
         width: 75%;
@@ -406,29 +564,40 @@ header{
     
 }
 @media screen and (max-width: 480px){
+    header{
+        position: relative;
+    }
     .main-container{
-        margin-top: 70px;
         min-height: auto;
+        margin-top: 0px;
     }
     .responsive-nav{
         padding: 40px;
-        padding-top: 80px;
+        padding-top: 100px;
     }
     .euforia-brand-responsive{
-        margin: 28px 0;
+        margin: 28px 16px;
     }
     .euforia-brand-responsive small{
         display: none;
     }
-    .responsive-nav .menu-item a{
-        font-size: 16px;
-    }
     .responsive-nav .menu-item{
         margin: 12px 0;
+        display: block;
+        z-index: 99999999999999;
+    }
+    .responsive-nav .menu-item a{
+        font-size: 24px;
+        line-height: 28px;
+        padding: 12px 0;
+        display: block;        
+    }
+    .logo-placeholder{
+        min-height: 100px;
     }
     .home-product-container .product-home-image{
         margin-top: 0px;
-        margin-bottom: 36px;
+        margin-bottom: 80px;
     }
     .responsive-nav-bottom .footer-copyright{
         font-size: 14px;
@@ -436,9 +605,9 @@ header{
     .product-aside, .euforia-product-aside{
         margin-bottom: 0px;
     }
-    .slogan-placeholder{
-        width: 100%;
-        bottom: -40px;
+    .page .slogan-placeholder{
+        width: 90%;
+        bottom: 10px;
     }
     .wolf-strike{
         display: none;

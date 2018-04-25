@@ -12,12 +12,12 @@ $(document).ready( function(){
             tillBottom += more_product_section.height() + 270;
         }
 
-        $(".stickThis").sticky(
+        /*$(".stickThis").sticky(
             {
                 topSpacing:180,
                 bottomSpacing: tillBottom
             }
-        );
+        );*/
         
     }
     
@@ -38,10 +38,12 @@ $(document).ready( function(){
     $('body').niceScroll(niceScrollArgs);
     
     
-    if (window_width <= 768){
+    if (window_width <= 1024){
+        
+        console.log('hola');
         
         // Agregar el div sostenedor de la navegacion responsive
-        $('body').append('<div id="responsive-nav" class="responsive-nav"></div>');
+        $('header').append('<div id="responsive-nav" class="responsive-nav"></div>');
         
         // Mudar la navegacion desktop al responsive-nav
         $('#main-nav').appendTo('#responsive-nav');

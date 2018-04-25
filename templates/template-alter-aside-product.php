@@ -7,17 +7,19 @@ Template Name: Euforia Side Product ALT
             <div class="container alter-template">
                 <?= get_template_part('templates/logo-placeholder') ?>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="stickThis">     
-                            <img class="euforia-product-aside" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo.png" alt="Euforia - Despierta La Bestia">
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-md-6 product-aside">
+                    <div class="col-sm-8 col-sm-push-4 col-md-7 col-md-push-3 product-aside">
                         <div class="page-content-container">
                             <?php the_content(); ?>
+                            <!--
                             <img class="wolf-strike" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-strike.png" alt="Euforia - Despierta La Bestia">
+                            -->
                             <?= get_template_part('templates/slogan-placeholder') ?>
                         </div>                        
+                    </div>
+                    <div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-7">
+                        <div class="stickThis">     
+                            <img class="euforia-product-aside" src="<?= get_template_directory_uri() ?>/images/euforia--reflejo-home.png" alt="Euforia - Despierta La Bestia">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -28,20 +30,21 @@ Template Name: Euforia Side Product ALT
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="row">
                                     <div class="col-md-4 col-md-offset-1">
-                                        <h3>CONÓCE MÁS DE<br />NUESTROS PRODUCTOS:</h3>
+                                        <h3>CONOCE MÁS DE<br />NUESTROS PRODUCTOS</h3>
                                         <hr />
                                         <img class="vita-health-logo" src="<?= get_template_directory_uri() ?>/images/vita-health-logo.png" alt="VitaHealth">
+                                        <br/>
                                         <a class="vita-link" href="http://www.vitahealth.la/" target="_blank">www.vitahealth.la</a>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-sm-4">
                                                 <img width="120px" src="<?= get_template_directory_uri() ?>/images/slim_sola.png" alt="Vita Health - Slim Shot">
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-sm-4">
                                                 <img width="120px" src="<?= get_template_directory_uri() ?>/images/relax_shot.png" alt="Vita Health - Relax &amp; Sleep Shot">
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-sm-4">
                                                 <img width="120px" src="<?= get_template_directory_uri() ?>/images/vitahealth_colageno.png" alt="Vita Health - Colageno">
                                             </div>
                                         </div>
