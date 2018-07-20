@@ -76,3 +76,8 @@ $(document).ready( function(){
     }
     
 })
+$('input[name="quantity"]').click( function(){
+    var itemID = $(this); 
+    var valor = $('a[data-product_id='+itemID.data('product_id')+']').data('quantity', itemID.val());
+    console.log(valor);
+})

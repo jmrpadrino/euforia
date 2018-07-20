@@ -155,29 +155,32 @@
                         <a class="multimedia-mask-link gthin" href="#" data-toggle="modal" data-target="#<?= sanitize_title(get_the_title()) ?>">Ver Contenido <i class="fas fa-caret-right"></i></a>
                         <?php } ?>
                         <?php if ( get_post_format() == 'video') { ?>
-                        <a class="play-btn" href="#" data-toggle="modal" data-target="#<?= sanitize_title(get_the_title()) ?>"><img src="<?= get_template_directory_uri() ?>/images/boton-play.png" alt="Euforia - Play Video"></a>
-                        <a class="multimedia-mask-link gthin" href="#" data-toggle="modal" data-target="#<?= sanitize_title(get_the_title()) ?>">Reproducir</a>
+                        <a class="play-btn ryv-popup" href="#"><img src="<?= get_template_directory_uri() ?>/images/boton-play.png" alt="Euforia - Play Video"></a>
+                        <a class="multimedia-mask-link ryv-popup gthin" href="#">Reproducir</a>
                         <?php } ?>
                     </div>
                 </div>
+                <?php 
+                    if ( get_post_format() == 'video') { 
+                        $video_id = get_post_meta( get_the_ID(), $prefix . 'video', true); 
+                        echo do_shortcode( '[ryv-popup video="https://www.youtube.com/embed/'.$video_id.'?autoplay=1"]' );
+                        //echo do_shortcode($video_id);
+                    } 
+                ?>
+                <?php if ( get_post_format() == 'gallery') { ?>
                 <!-- Modal -->
                 <div class="modal fade" id="<?= sanitize_title(get_the_title()) ?>" tabindex="-1" role="dialog" aria-labelledby="<?= sanitize_title(get_the_title()) ?>">
                     <div class="modal-dialog modal-lg" role="document">
                         <button type="button" class="close button-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h2 class="modal-title gthin"><?= the_title() ?></h2>
-                        <?php if ( get_post_format() == 'gallery') { ?>
                         <img class="img-responsive" src="<?= $imagen_fondo ?>" alt="<?= get_the_title() ?>">
-                        <?php } ?>
-                        <?php if ( get_post_format() == 'video') { $video_id = get_post_meta( get_the_ID(), $prefix . 'video', true); ?>
-                        <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $video_id ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                        <?php } ?>
                         <div class="image-excerpt">
                             <?= get_the_excerpt() ?>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
+                
                 
                 <?php } ?>
                 <div class="multimedia-item-container multimedia-last-one flex-col-2" style="background-image: url(<?= get_template_directory_uri() ?>/images/euforia-multimedia-divbkg.jpg)">

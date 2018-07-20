@@ -181,6 +181,7 @@
                             <img class="product-bkg" src="<?= get_template_directory_uri() ?>/images/euforia-wolf-eyes.jpg">
                         </div>
                         <?= get_template_part('templates/slogan-placeholder') ?>
+						<a class="ryv-popup" href="#">&nbsp</a>
                     </div>
                 </div>
             </div>
@@ -195,6 +196,7 @@
                 </div>
             </div>
 <?php } ?>
+<?= do_shortcode( '[ryv-popup video="https://www.youtube.com/embed/NFoFQqCvcVQ?autoplay=1"]' ); ?>
 <?php get_footer(); ?>
 <script>
     $(document).ready( function(){
@@ -206,5 +208,6 @@
                 $('.benefits-placeholder').toggleClass('active');
             },1000);
         })
+		$('.ryv-popup').trigger('click');
     })
 </script>

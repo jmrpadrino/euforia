@@ -48,10 +48,10 @@ function euforia_register_meta_boxes( $meta_boxes ) {
     
     if ( $formato == 'video' ) {
         $campo_meta = array(
-            'name' => 'Youtube Video ID',
+            'name' => 'Youtube Video ShortCode',
             'id' => $prefix . 'video',
             'type' => 'text',
-            'desc' => 'Ejem.: https://www.youtube.com/watch?v=<strong style="color: #EC0B43;">Z6ih1aKeETk</strong>'
+            'desc' => 'Ejem.: [ryv-popup video=”https://www.youtube.com/embed/YlUKcNNmywk?autoplay=1″]'
         );
         $horizontal = array(
             'name' => 'Horizontal en grilla?',
@@ -89,6 +89,22 @@ function euforia_register_meta_boxes( $meta_boxes ) {
             $horizontal
         ),
         'priority' => 'low',
+    );
+    
+    $meta_boxes[] = array(
+        'id'         => 'product-ribbon',
+        'title'      => __( 'Ribbon ', 'euforia' ),
+        'post_types' => array('product'),
+        'fields' => array( 
+            array(
+                'name' => 'Ribbon Image',
+                'id' => $prefix . 'product_ribbon',
+                'type' => 'image_advanced',
+                'desc' => __('<span style="color: red; font-weight: bold;">Badge de la esquina superior del Producto.</span>','euforia'),
+            ),
+        ),
+        'priority' => 'high',
+        'context' => 'side'
     );
     
     return $meta_boxes;

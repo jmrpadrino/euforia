@@ -38,6 +38,17 @@ $contacto_ID = $contacto->ID;
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <?php wp_head(); ?>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118676617-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-118676617-1');
+        </script>
+
         <!-- Facebook Pixel Code -->
         <script>
             !function(f,b,e,v,n,t,s)
@@ -59,7 +70,7 @@ $contacto_ID = $contacto->ID;
             <div class="container-fluid header-placeholder">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="container">
+                        <div class="container menu-holder" style="position: relative;">
                             <div class="row hidden-md hidden-lg">
                                 <div class="col-xs-5">
                                     <a href="<?= home_url() ?>"><h1 class="euforia-brand-responsive"><?= bloginfo('name') ?><br /><small><?= bloginfo('description') ?></small></h1></a>
@@ -83,7 +94,18 @@ $contacto_ID = $contacto->ID;
                                 <div class="col-sm-10 col-sm-offset-1">
                                     <div class="row">
                                         <div class="col-xs-12 text-center">
-                                            <nav id="main-nav">
+											<ul class="list-inline header-menu social-menu">
+                                                <?php if ( $facebook = get_post_meta( $contacto_ID, $prefix . 'facebook', true) ){ ?>
+                                                <li class="menu-item"><a href="<?= $facebook ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <?php } ?>
+                                                <?php if ( $instagram = get_post_meta( $contacto_ID, $prefix . 'instagram', true) ){ ?>
+                                                <li class="menu-item"><a href="<?= $instagram ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                                <?php } ?>
+                                                <?php if ( $youtube = get_post_meta( $contacto_ID, $prefix . 'youtube', true) ){ ?>
+                                                <li class="menu-item"><a href="<?= $youtube ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                            <nav id="main-nav" style="margin-left: 36px;">
                                                 <?php 
                                                 //wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right pull-right orangine-menu-items', 'depth'=> 4, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu));
                                                 wp_nav_menu( array(
@@ -96,21 +118,13 @@ $contacto_ID = $contacto->ID;
                                                 ) );
                                                 ?>
                                             </nav>                                        
-                                            <ul class="list-inline header-menu social-menu pull-right">
-                                                <?php if ( $facebook = get_post_meta( $contacto_ID, $prefix . 'facebook', true) ){ ?>
-                                                <li class="menu-item"><a href="<?= $facebook ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                                <?php } ?>
-                                                <?php if ( $instagram = get_post_meta( $contacto_ID, $prefix . 'instagram', true) ){ ?>
-                                                <li class="menu-item"><a href="<?= $instagram ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                                <?php } ?>
-                                                <?php if ( $youtube = get_post_meta( $contacto_ID, $prefix . 'youtube', true) ){ ?>
-                                                <li class="menu-item"><a href="<?= $youtube ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                                <?php } ?>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+							<div class="fb-placeholder" style="position: absolute; right: 0; top: 0; display: flex; align-items: center; min-height:74px;">
+								<iframe class="hidden-xs" style="margin: 0 5px;" src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Feuforia.la%2F&width=80&layout=button&action=like&size=small&show_faces=false&share=false&height=65&appId" width="105" height="24" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+							</div>
                         </div>
                     </div>
                 </div>
