@@ -46,7 +46,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             </div>
             <?php } ?>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5 product-image-placeholder">
                     <?php
                         /**
                          * Hook: woocommerce_before_shop_loop_item_title.
@@ -54,9 +54,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                          * @hooked woocommerce_show_product_loop_sale_flash - 10
                          * @hooked woocommerce_template_loop_product_thumbnail - 10
                          */
-                        do_action( 'woocommerce_before_shop_loop_item_title' );
-
+                        //do_action( 'woocommerce_before_shop_loop_item_title' );
+                        $imagen_destacada = get_post_thumbnail_id( $product->get_id() );
+                        $imagen_destacada = wp_get_attachment_url( $imagen_destacada );
+                        
                         ?>
+                    <img src="<?= $imagen_destacada ?>" class="img-responsive loop-producto-post-thumbnail">
                 </div>
                 <div class="col-md-7">
                     <div class="row">
@@ -95,22 +98,29 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-5">
+                        <div class="col-xs-12 text-right euforia-product-description">
+                            <span><?= $product->get_short_description(); ?> </span>
+                        </div>
+                        <div class="col-xs-12">
                             <?php 
                             $attachment_ids = $product->get_gallery_image_ids();
 
                             if ( $attachment_ids && has_post_thumbnail() ) {
                                 echo '<ol class="flex-control-nav flex-control-thumbs">';
+                            ?>
+                                <div data-thumb="<?= $imagen_destacada ?>" class="woocommerce-product-gallery__image">
+                                    <a href="<?= $imagen_destacada ?>">
+                                        <img width="600" height="1067" src="<?= $imagen_destacada ?>" class="" alt="<?= $product->get_name() ?>" title="<?= $product->get_name() ?>" data-caption="<?= $product->get_name() ?>" data-src="<?= $imagen_destacada ?>">
+                                    </a>
+                                </div>
+                            <?php
                                 foreach ( $attachment_ids as $attachment_id ) {
                                     echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id  ), $attachment_id );
                                 }
                                 echo '</ol>';
                             }
                             ?>
-                        </div>
-                        <div class="col-xs-7 euforia-product-description">
-                            <?= $product->get_short_description(); ?> 
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </div>

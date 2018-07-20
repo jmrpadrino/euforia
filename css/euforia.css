@@ -722,6 +722,18 @@ header{
     position: relative;
     margin-bottom: 60px;
 }
+.product-image-placeholder{
+    position: relative;
+    height: 380px;
+    max-height: 380px;
+    overflow: hidden;
+}
+.product-image-placeholder img{
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    max-height: 380px;
+}
 
 .product-placeholder .euforia-ribbon{
     position: absolute;
@@ -735,7 +747,10 @@ header{
     color: #EC0B43;
     font-size: 12px;
 }
-
+.euforia-product-description span{
+    display: block;
+    margin-right: 50px;
+}
 .products .flex-control-thumbs {
     padding: 0px;
     margin: 0px;

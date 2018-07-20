@@ -1,5 +1,6 @@
 var more_product_section = $('.more-products-section');
 var tillBottom = 120;
+$('.wp-post-image').removeAttr('srcset');
 $(document).ready( function(){
     
     var window_width = $(window).width();
@@ -40,8 +41,6 @@ $(document).ready( function(){
     
     if (window_width <= 1024){
         
-        console.log('hola');
-        
         // Agregar el div sostenedor de la navegacion responsive
         $('header').append('<div id="responsive-nav" class="responsive-nav"></div>');
         
@@ -76,8 +75,22 @@ $(document).ready( function(){
     }
     
 })
+// AGREGA MAS UN PRODUCTO DESDE INPUT PARA ENVIAR AL CARRITO VIA AJAX
 $('input[name="quantity"]').click( function(){
     var itemID = $(this); 
     var valor = $('a[data-product_id='+itemID.data('product_id')+']').data('quantity', itemID.val());
     console.log(valor);
+})
+// CAMBIO DE IMAGENES EN LA GALERIA DEL LOOP
+$('.woocommerce-product-gallery__image > a').click(function(e){
+    e.preventDefault();
+    
+    var destino = $(this).parents('.product-placeholder').find('.product-image-placeholder');
+    var origen = $(this);
+    var nueva_imagen = origen.find('img');
+    var imagen = destino.find('img');
+    
+    imagen.remove();
+    nueva_imagen.clone().appendTo(destino);
+    
 })
